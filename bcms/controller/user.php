@@ -1,0 +1,33 @@
+<?php
+  class userController{
+   function __construct() {
+
+   }
+   function listing(){
+	loadView('header.php');
+      $arrValue=loadModel('user','showUserListing');
+     // print_r($arrValue);
+	  loadView('user_listing.php',$arrValue);    
+      loadView('footer.php');
+   }
+
+   function detail(){
+      loadView('header.php');
+      $id=$_GET['id'];
+      $arrArgument['id']=$id;
+      $arrValue=loadModel('user','userDetails',$arrArgument);
+      loadView('user_detail.php',$arrValue);
+		//('view file name','first array','second array')
+      loadView('footer.php');
+   }
+   function ajaxdetail(){
+	//echo "in finction ajax detail ";	
+	  $id=$_GET['id'];
+      $arrArgument['id']=$id;
+      $arrValue=loadModel('user','userDetails',$arrArgument);
+	  loadView('user_detail_ajax.php',$arrValue);
+      
+   }
+
+}
+?>
