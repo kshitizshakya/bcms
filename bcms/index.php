@@ -15,7 +15,7 @@ if($controller=="admin")
 {$function = 'showAdminPanel';}
 else
 {
-      $function ='showHome';    //default function
+      $function ='showHome';  //default function
 }
 }
 
