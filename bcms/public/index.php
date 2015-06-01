@@ -1,12 +1,8 @@
-<?php 
-echo"this is index.php";
-if(!isset($_GET['url']))
-{
-$url = "index.php";
-}
-else
-{
-	$url = $_GET['url'];
-}
-	echo "\n" . $url ; 
-?>
+<?php    
+ 
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', dirname(dirname(__FILE__)));
+ 
+$url = $_GET['path'];
+ 
+require_once (ROOT . DS . 'library' . DS . 'bootstrap.php');

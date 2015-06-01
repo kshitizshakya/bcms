@@ -1,16 +1,24 @@
 <?php
-define('SITE_ROOT','');
+define ('DEVELOPMENT_ENVIRONMENT',true);
+
+/*define('SITE_ROOT','');
 define('SITE_PATH','');
-define('IMAGE_PATH',SITE_PATH.'images/');
-define('CSS_PATH',SITE_PATH.'css/');
-define('JS_PATH',SITE_PATH.'js/');
-define('LIBRARY_ROOT',SITE_ROOT.'library/');
+
+
+define('IMAGES',ROOT.DS.'images/');
+define('CSS',SITE_PATH.'css/');
+define('JS',SITE_PATH.'js/');
+define(',SITE_ROOT.'library/');
 define('VIEW_PATH',SITE_ROOT.'view/');
 define('MODEL_PATH',SITE_ROOT.'model/');
+
 
 //admin route 
 define('ADMIN_VIEW_PATH',SITE_ROOT.'admin/view/');
 define('ADMIN_MODEL_PATH',SITE_ROOT.'admin/model/');
+*/
+
+
 
 function loadView($templateName,$arrPassValue='',$arrPassValue2=''){
 
