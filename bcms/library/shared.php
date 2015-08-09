@@ -61,13 +61,12 @@ function callHook() {
     $urlArray = explode("/",$url);
  
     $app = $urlArray[0];
-echo loadApplication($app);
+    
+    loadApplication($app);
 
-   /* if(loadApplication($app)== true)
-    {
-        echo "hsdikjksidofn";
-    }
-*/
+    loadController();
+   
+
     //array_shift($urlArray);
    
    /* $action = $urlArray[0];
@@ -94,10 +93,17 @@ echo loadApplication($app);
 
 function loadApplication($appname)
 {
-    $appname = strtolower($appname);    
+
+    $appname = strtolower($appname);  
+
+    
+
+
     if (file_exists(APP_F . DS. $appname)) 
     {
-       echo "App is present  ";
+       echo "App is present ";
+       //echo APP_F . DS . $appname . DS . 'config.php';
+
        include_once(APP_F . DS . $appname . DS . 'config.php');
 
        return "true";

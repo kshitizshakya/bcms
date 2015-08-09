@@ -1,0 +1,110 @@
+[28-Jun-2015 07:13:53 UTC] 2  :  include_once(C:\xampp\htdocs\diary\git\bcms\apps\admin\config.php): failed to open stream: No such file or directory: MAJOR PROBLEM at Test: June 28, 2015, 9:13 am
+ <pre>Error <br> C:\xampp\htdocs\diary\git\bcms\library\shared.php
+on line no :  107
+array(6) {
+  ["_GET"]=>
+  array(1) {
+    ["path"]=>
+    string(5) "admin"
+  }
+  ["_POST"]=>
+  array(0) {
+  }
+  ["_COOKIE"]=>
+  array(0) {
+  }
+  ["_FILES"]=>
+  array(0) {
+  }
+  ["url"]=>
+  &string(5) "admin"
+  ["GLOBALS"]=>
+  *RECURSION*
+}
+
+[28-Jun-2015 07:14:00 UTC] 2  :  include_once(C:\xampp\htdocs\diary\git\bcms\apps\admin\config.php): failed to open stream: No such file or directory: MAJOR PROBLEM at Test: June 28, 2015, 9:14 am
+ <pre>Error <br> C:\xampp\htdocs\diary\git\bcms\library\shared.php
+on line no :  107
+array(6) {
+  ["_GET"]=>
+  array(1) {
+    ["path"]=>
+    string(5) "admin"
+  }
+  ["_POST"]=>
+  array(0) {
+  }
+  ["_COOKIE"]=>
+  array(0) {
+  }
+  ["_FILES"]=>
+  array(0) {
+  }
+  ["url"]=>
+  &string(5) "admin"
+  ["GLOBALS"]=>
+  *RECURSION*
+}
+
+[28-Jun-2015 07:20:53 UTC] PHP Warning:  include_once(C:\xampp\htdocs\diary\git\bcms\apps\\config.php): failed to open stream: No such file or directory in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 107
+[28-Jun-2015 07:20:53 UTC] PHP Warning:  include_once(): Failed opening 'C:\xampp\htdocs\diary\git\bcms\apps\\config.php' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 107
+[28-Jun-2015 07:20:53 UTC] PHP Fatal error:  Call to undefined function loadController() in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 67
+[28-Jun-2015 07:21:41 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:22:00 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:22:01 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:22:02 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:22:25 UTC] 2  :  include_once(C:\xampp\htdocs\diary\git\bcms\apps\admin\config.php): failed to open stream: No such file or directory: MAJOR PROBLEM at Test: June 28, 2015, 9:22 am
+ <pre>Error <br> C:\xampp\htdocs\diary\git\bcms\library\shared.php
+on line no :  107
+array(6) {
+  ["_GET"]=>
+  array(1) {
+    ["path"]=>
+    string(5) "admin"
+  }
+  ["_POST"]=>
+  array(0) {
+  }
+  ["_COOKIE"]=>
+  array(0) {
+  }
+  ["_FILES"]=>
+  array(0) {
+  }
+  ["url"]=>
+  &string(5) "admin"
+  ["GLOBALS"]=>
+  *RECURSION*
+}
+
+[28-Jun-2015 07:22:52 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:23:05 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:23:07 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:23:07 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:23:31 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:23:32 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:23:36 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:24:45 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:24:47 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:25:18 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:25:19 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:25:19 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:25:26 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:25:27 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:25:28 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:25:29 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:25:29 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:25:30 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 07:25:30 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 08:10:49 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 09:16:17 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 09:16:19 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 09:16:21 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[28-Jun-2015 12:08:49 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[19-Jul-2015 05:11:53 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[19-Jul-2015 05:12:02 UTC] PHP Warning:  include_once(C:\xampp\htdocs\diary\git\bcms\apps\admin\config.php): failed to open stream: No such file or directory in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 107
+[19-Jul-2015 05:12:02 UTC] PHP Warning:  include_once(): Failed opening 'C:\xampp\htdocs\diary\git\bcms\apps\admin\config.php' for inclusion (include_path='.;C:\xampp\php\PEAR') in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 107
+[19-Jul-2015 05:12:02 UTC] PHP Fatal error:  Call to undefined function loadController() in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 67
+[19-Jul-2015 05:16:47 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[19-Jul-2015 05:16:50 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114
+[19-Jul-2015 05:16:59 UTC] PHP Fatal error:  404 in C:\xampp\htdocs\diary\git\bcms\library\shared.php on line 114

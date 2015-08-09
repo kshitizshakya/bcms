@@ -1,6 +1,6 @@
 <?php
 //Please dont make any changes here
-define ('DEVELOPMENT_ENVIRONMENT',true);
+define ('DEVELOPMENT_ENVIRONMENT',false);
 global $url;
 
 
