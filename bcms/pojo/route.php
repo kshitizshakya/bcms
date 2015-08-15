@@ -2,20 +2,25 @@
 <?
 class Route
 {
-	$path;
-	$controller;
-	$action="";
-	
-	 static public function new()
+	private $path;
+
+    public function Redirect($parameter)
     {
-        return new static;
+    	$this->path = $parameter;
+
+
     }
 }
 
 
+$obj = new Route();
+$obj->Redirect("hello");
+
+var_dump($obj); exit;
+
+
 	
 	
 	
 	
 	
-}
