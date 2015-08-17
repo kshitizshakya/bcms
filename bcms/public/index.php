@@ -3,31 +3,30 @@ define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(dirname(__FILE__)));
 
 require_once (ROOT . DS . 'library' . DS . 'common.inc.php');
-//require_once(ERROR_CONTROLLER);
+require_once(ERROR_CONTROLLER);
 //set_error_handler("SysErrorHandler");
 
 //echo "isset value". isset($_GET['path']);
 
 
-if(isset($_GET['path']))
-{
-	echo "length of the string  : " . ($_GET['path']) . " text";
 
-	if(empty($_GET['path']))
-	{global $url;
-		$url = 'default/default/';	
+if(isset($_GET['path'])){
+
+	if(empty($_GET['path'])){
+
+		global $url;
+		$url = DEFAULT_APP;	
 	}
-	else
-	{global $url;
+	else{
+		global $url;
 		$url = $_GET['path'];
 	}	
 } 
 else
 {
 	//echo "length of the string in else part  : " . strlen($_GET['path']);
-	//throw error
 	global $url;
-	$url = 'default/default/';	
+	$url = DEFAULT_APP;	
 }
 	
 

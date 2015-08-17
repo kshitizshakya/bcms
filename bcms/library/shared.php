@@ -1,5 +1,9 @@
  <?php
  
+ $Appname = "";
+
+
+
 /** Check if environment is development and display errors **/
  
 function setReporting() 
@@ -51,107 +55,73 @@ function unregisterGlobals() {
         }
     }
 }
- 
+
+function after ($this, $inthat){
+  if (!is_bool(strpos($inthat, $this))){
+    return substr($inthat, strpos($inthat,$this)+strlen($this));
+  }
+}
+
+function before ($this, $inthat){
+        return substr($inthat, 0, strpos($inthat, $this));
+}
+
 /** Main Call Function **/
  
 function callHook() {
+
     global $url;
- 
+
     $urlArray = array();
     $urlArray = explode("/",$url);
- 
-    $app = $urlArray[0];
-    
+    $app = $urlArray[0]; 
+
     loadApplication($app);
-
-    loadController();
-   
-
-    //array_shift($urlArray);
-   
-   /* $action = $urlArray[0];
-    array_shift($urlArray);*/
-   
-    $queryString = $urlArray;
- 
-   /* $controllerName = $controller;
-    $controller = ucwords($controller);
-
-    $model = rtrim($controller, 's');
-    $controller .= 'Controller';
-    
-    $dispatch = new $controller($model,$controllerName,$action);
- 
-    if ((int)method_exists($controller, $action)) {
-        call_user_func_array(array($dispatch,$action),$queryString);
-    } else {
-        /* Error Generation Code Here * /
-    *}*/
+     
 }
  
+
+
 /** Autoload any classes that are required **/
 
-function loadApplication($appname)
-{
+function loadApplication($appname){
+  global $url;
 
-    $appname = strtolower($appname);  
+  $appname = strtolower($appname); 
 
-    
+  global $Appname;
+  $Appname=$appname;
+  
+  $data = after($appname,$url);
+  
+  if (file_exists(APP_F . DS. $appname)){
+    require_once(APP_F . DS . $appname . DS .'config'. DS .'config.php');
+   
+    if (file_exists(APP_F. DS . $appname . DS . 'route' . DS . 'app_route.php')){
+        
+        require_once(APP_F. DS . $appname . DS . 'route' . DS . 'app_route.php');
 
-
-    if (file_exists(APP_F . DS. $appname)) 
-    {
-       echo "App is present ";
-       //echo APP_F . DS . $appname . DS . 'config.php';
-
-       include_once(APP_F . DS . $appname . DS . 'config.php');
-
-       return "true";
-    } 
-    else
-    {
+        $obj = new AppRoute($data);
+        $obj->init($data);
+        
+    } else{
+      trigger_error(404,E_USER_ERROR);
+    }
+  } else{
         //SysErrorHandler
         trigger_error(404,E_USER_ERROR);
-    }
-
+  }
 }
 
- 
-/*function __autoload($className) 
-{
-    if (file_exists(ROOT . DS . 'library' . DS . strtolower($className) . '.class.php')) 
-    {
-        require_once(ROOT . DS . 'library' . DS . strtolower($className) . '.class.php');
-    } 
-    else 
-    {
-        if (file_exists(ROOT . DS . 'application' . DS . 'controllers' . DS . strtolower($className) . '.php')) 
-        {
-            require_once(ROOT . DS . 'application' . DS . 'controllers' . DS . strtolower($className) . '.php');
-        } 
-        else
-        {   
-            if (file_exists(ROOT . DS . 'application' . DS . 'models' . DS . strtolower($className) . '.php')) 
-            {
-                 require_once(ROOT . DS . 'application' . DS . 'models' . DS . strtolower($className) . '.php');
-            } 
-            else 
-            {
-                  // Error Generation Code Here 
-            }
-        }   
-    }
-}*/
+function loadView($templateName,$arrPassValue='',$arrPassValue2=''){
 
+global $Appname;
+         $view_path= APP_F . DS . $Appname . DS .'view'.DS.$templateName;
+         
 
-function loadView($templateName,$arrPassValue='',$arrPassValue2='')
-{
+         if(file_exists($view_path)){
 
-         $view_path=VIEW_PATH.$templateName;
-         if(file_exists($view_path))
-         {
-            if(isset($arrPassValue))
-            {
+            if(isset($arrPassValue)){
                  $arrValue=$arrPassValue;
             }
             if(isset($arrPassValue2))
@@ -159,7 +129,7 @@ function loadView($templateName,$arrPassValue='',$arrPassValue2='')
                  $arrValue2=$arrPassValue2;
             }
 
-            include_once($view_path);
+            require_once($view_path);
          }
          else
          {
@@ -239,6 +209,30 @@ function loadAdminModel($modelName,$function,$arrArgument=''){
 
 }
 
+function loadController($controller,$function){
+global $Appname;
+ // echo "$controller" . $Appname .$function ;
+  $controller=strtolower($controller);
+
+  $fn = APP_F. DS . $Appname . DS .'controller'. DS . $controller . '.php';
+  //echo $fn;
+
+  if(file_exists($fn)){
+
+      require_once($fn);
+
+      $controllerClass= $controller.'Controller';
+         $obj=new $controllerClass;
+      if(!method_exists($controllerClass,$function)){
+         die($function .' function not found');      }
+  
+   
+      $obj-> $function();
+
+  }else{
+      die($controller .' controller not found');
+  }
+}
 
  
 setReporting();
