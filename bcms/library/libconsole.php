@@ -3,7 +3,6 @@
  $Appname = "";
 
 
-
 /** Check if environment is development and display errors **/
  
 function setReporting() 
@@ -95,6 +94,7 @@ function loadApplication($appname){
   $data = after($appname,$url);
   
   if (file_exists(APP_F . DS. $appname)){
+
     require_once(APP_F . DS . $appname . DS .'config'. DS .'config.php');
    
     if (file_exists(APP_F. DS . $appname . DS . 'route' . DS . 'app_route.php')){
@@ -115,9 +115,9 @@ function loadApplication($appname){
 
 function loadView($templateName,$arrPassValue='',$arrPassValue2=''){
 
-global $Appname;
+        global $Appname;
          $view_path= APP_F . DS . $Appname . DS .'view'.DS.$templateName;
-         
+
 
          if(file_exists($view_path)){
 
@@ -138,26 +138,9 @@ global $Appname;
 
 }
 
-function loadAdminView($templateName,$arrPassValue='',$arrPassValue2=''){
-
-         $view_path=ADMIN_VIEW_PATH.$templateName;
-         if(file_exists($view_path)){
-            if(isset($arrPassValue)){
-                 $arrValue=$arrPassValue;
-            }
-            if(isset($arrPassValue2)){
-                 $arrValue2=$arrPassValue2;
-            }
-
-            include_once($view_path);
-         }else{
-            die($templateName. ' Template Not Found under View Folder');
-         }
-
-}
 
 function loadModel($modelName,$function,$arrArgument=''){
-        $model_path=MODEL_PATH.$modelName.'.php';
+        $model_path=APP_F . DS . $Appname . DS .'view'.DS.$modelName.'.php';
 
          if(file_exists($model_path)){
             if(isset($arr)){
@@ -182,34 +165,9 @@ function loadModel($modelName,$function,$arrArgument=''){
 
 }
 
-
-function loadAdminModel($modelName,$function,$arrArgument=''){
-        $model_path=ADMIN_MODEL_PATH.$modelName.'.php';
-
-         if(file_exists($model_path)){
-            if(isset($arr)){
-                 $arrData=$arrPassValue;
-            }
-
-            include_once($model_path);
-            $modelClass=$modelName.'Model';
-            if(!method_exists($modelClass,$function)){
-                die($function .' function not found in Model '.$modelName);
-            }
-
-            $obj=new $modelClass;
-            if(isset($arrArgument)){
-                return $obj-> $function($arrArgument);
-            }else{
-                return $obj-> $function();
-            }
-         }else{
-            die($modelName. ' Model Not Found under Model Folder');
-         }
-
-}
 
 function loadController($controller,$function){
+
 global $Appname;
  // echo "$controller" . $Appname .$function ;
   $controller=strtolower($controller);

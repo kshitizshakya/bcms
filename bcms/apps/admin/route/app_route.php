@@ -22,9 +22,8 @@ class AppRoute {
 		switch ($this->data) {
 			case '/':
 			case '':
-			$route = new Route('home','showHome');				
+			$route = new Route('main','showHome');				
 			break;
-
 
 			default:
 			trigger_error(404,E_USER_ERROR);

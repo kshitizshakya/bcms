@@ -3,8 +3,9 @@ define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(dirname(__FILE__)));
 
 require_once (ROOT . DS . 'library' . DS . 'common.inc.php');
+
 require_once(ERROR_CONTROLLER);
-//set_error_handler("SysErrorHandler");
+set_error_handler("SysErrorHandler");
 
 //echo "isset value". isset($_GET['path']);
 

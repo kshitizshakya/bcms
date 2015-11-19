@@ -6,11 +6,13 @@
 
    function showHome()
 	{
-   loadView('header4.php');
+   /*loadView('header4.php');
    
    loadView('home4_content.php');
    
-   loadView('footer.php');
+   loadView('footer.php');*/
+
+   loadView('sample.html');
    }
    
    function listing(){
